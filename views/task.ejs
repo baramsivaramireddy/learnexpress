@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> task manager</title>
+</head>
+<body class="bg-gradient-to-r from-green-300 via-purple-200 to-blue-300">
+
+<main  class="  grid h-screen place-items-center ">
+
+    <p>
+        <b class="text-xl">Tasks</b> :  
+      
+        <ul class="list-decimal">
+
+            
+                <% for(let i = 0; i < locals.Tasks.length; i++){ 
+                    %>
+                    <li><%= locals.Tasks[i] %></li>
+                    <% 
+            } %>
+              
+        </ul>
+       
+    </p>
+   
+
+
+
+
+<form action="/task" method ="POST">
+
+    <input type="text" class="p-2 rounded-lg border-red-500 " placeholder="task" name="task">
+    <br>
+    <input type="submit" class="bg-white hover:bg-gray-100   mt-1 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow" value="add task">
+</form>
+
+<a href="/" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow">HOME</a>
+</main>
+  
+
+</body>
+</html>
